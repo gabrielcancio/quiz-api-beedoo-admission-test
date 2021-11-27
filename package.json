@@ -7,7 +7,7 @@
     "start": "tsc && node dist/server.js",
     "dev": "npx ts-node-dev src/server.ts",
     "knex:migrate:latest": "docker exec -it api-beedoo npx knex migrate:latest",
-    "test": "jest"
+    "test": "NODE_ENV=testing jest -i"
   },
   "repository": {
     "type": "git",
