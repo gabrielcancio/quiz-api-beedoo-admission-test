@@ -24,7 +24,7 @@ const knexConfig: IKnexConfig = {
   testing: {
     client: "mysql",
     connection: {
-      host: "database",
+      host: "localhost",
       port: 3306,
       user: "docker",
       password: "docker",
