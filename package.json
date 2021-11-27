@@ -5,7 +5,8 @@
   "main": "src/server.js",
   "scripts": {
     "start": "tsc && node dist/server.js",
-    "dev": "npx ts-node-dev src/server.ts"
+    "dev": "npx ts-node-dev src/server.ts",
+    "knex:migrate:latest": "docker exec -it api-beedoo npx knex migrate:latest"
   },
   "repository": {
     "type": "git",
