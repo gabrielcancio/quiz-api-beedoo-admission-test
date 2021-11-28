@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import { createQuestionController } from "../modules/quizzes/useCases/createQuestion";
+import { deleteQuestionController } from "../modules/quizzes/useCases/deleteQuestion";
 import { listQuestionController } from "../modules/quizzes/useCases/listQuestions";
 import { updateQuestionController } from "../modules/quizzes/useCases/updateQuestion";
 
@@ -16,6 +17,10 @@ questionsRoutes.get("/", (request, response) => {
 
 questionsRoutes.patch("/:id", (request, response) => {
   return updateQuestionController.handle(request, response);
+});
+
+questionsRoutes.delete("/:id", (request, response) => {
+  return deleteQuestionController.handle(request, response);
 });
 
 export { questionsRoutes };
