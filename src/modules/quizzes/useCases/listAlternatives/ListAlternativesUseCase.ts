@@ -7,7 +7,9 @@ class ListAlternativesUseCase {
   ) {}
 
   public async execute(): Promise<Alternative[]> {
-    return [];
+    const alternatives = await this.alternativesRepository.listAll();
+
+    return alternatives;
   }
 }
 
