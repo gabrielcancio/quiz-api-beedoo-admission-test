@@ -1,6 +1,7 @@
 import { Router } from "express";
 
 import { createAlternativeController } from "../modules/quizzes/useCases/createAlternative";
+import { deleteAlternativeController } from "../modules/quizzes/useCases/deleteAlternative";
 import { listAlternativesController } from "../modules/quizzes/useCases/listAlternatives";
 import { updateAlternativeController } from "../modules/quizzes/useCases/updateAlternative";
 
@@ -16,6 +17,10 @@ alternativesRoutes.get("/", (request, response) => {
 
 alternativesRoutes.patch("/:id", (request, response) => {
   return updateAlternativeController.handle(request, response);
+});
+
+alternativesRoutes.delete("/:id", (request, response) => {
+  return deleteAlternativeController.handle(request, response);
 });
 
 export { alternativesRoutes };
