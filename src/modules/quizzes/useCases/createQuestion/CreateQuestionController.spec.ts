@@ -40,4 +40,21 @@ describe("Create Question Controller", () => {
 
     expect(response.body.message).toBe(expectedMessage);
   });
+
+  it("Should not be able to create a question with used content", async () => {
+    const questionToCreate = {
+      content: "Is Beedoo amazing?",
+    };
+
+    await request(app).post("/questions").send(questionToCreate).expect(201);
+
+    const response = await request(app)
+      .post("/questions")
+      .send(questionToCreate)
+      .expect(400);
+
+    const expectedMessage = "Question already exists!";
+
+    expect(response.body.message).toBe(expectedMessage);
+  });
 });
