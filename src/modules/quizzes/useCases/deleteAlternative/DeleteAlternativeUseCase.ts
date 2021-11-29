@@ -10,7 +10,17 @@ class DeleteAlternativeUseCase {
     private alternativesRepository: IAlternativesRepositories
   ) {}
 
-  public async execute({ id }: IRequest) {}
+  public async execute({ id }: IRequest) {
+    const alternativeAlreadyExists = await this.alternativesRepository.findOne({
+      id,
+    });
+
+    if (!alternativeAlreadyExists) {
+      throw new AppError("Alternative must be valid!");
+    }
+
+    await this.alternativesRepository.delete({ id });
+  }
 }
 
 export { DeleteAlternativeUseCase };
