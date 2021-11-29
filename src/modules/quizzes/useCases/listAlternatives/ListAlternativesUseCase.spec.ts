@@ -46,8 +46,6 @@ describe("List Alternatives", () => {
 
     const alternatives = await listAlternativesUseCase.execute();
 
-    console.log(alternatives);
-
     expect(alternatives[0]).toHaveProperty("id");
     expect(alternatives[1]).toHaveProperty("id");
     expect(alternatives[0]).toHaveProperty("question_id", defaultQuestion.id);
