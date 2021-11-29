@@ -7,7 +7,7 @@ import { KnexMysqlQuestionsRepository } from "../../repositories/implementations
 
 let question: Question;
 
-describe("Update Category Controller", () => {
+describe("Update Question Controller", () => {
   beforeAll(async () => {
     await knex.migrate.latest();
 
