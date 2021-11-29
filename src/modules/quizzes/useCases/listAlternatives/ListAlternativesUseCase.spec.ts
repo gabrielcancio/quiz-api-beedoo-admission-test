@@ -50,6 +50,8 @@ describe("List Alternatives", () => {
 
     expect(alternatives[0]).toHaveProperty("id");
     expect(alternatives[1]).toHaveProperty("id");
+    expect(alternatives[0]).toHaveProperty("question_id", defaultQuestion.id);
+    expect(alternatives[1]).toHaveProperty("question_id", defaultQuestion.id);
     expect(alternatives.length).toEqual(alternativesToCreate.length);
     expect(alternativesRepositorySpy).toHaveBeenCalled();
   });
