@@ -8,7 +8,7 @@ import { KnexMysqlQuestionsRepository } from "../../repositories/implementations
 const knexMysqlQuestionsRepository = new KnexMysqlQuestionsRepository();
 const knexMysqlAlternativesRepository = new KnexMysqlAlternativesRepository();
 
-describe("Delete Question Controller", () => {
+describe("Delete Alternative Controller", () => {
   beforeAll(async () => {
     await knex.migrate.latest();
   });
@@ -29,7 +29,7 @@ describe("Delete Question Controller", () => {
     });
 
     await request(app).delete(`/alternatives/${id}`).expect(203);
-    const questions = await knexMysqlAlternativesRepository.listAll();
+    const questions = await knexMysqlAlternativesRepository.list();
 
     expect(questions.length).toBe(0);
   });
