@@ -15,6 +15,10 @@ type AlternativeUpdateDTO = {
   content: string;
 };
 
+type AlternativeListDTO = {
+  questionId?: string;
+};
+
 type AlternativeDeleteDTO = {
   id: string;
 };
@@ -22,7 +26,7 @@ type AlternativeDeleteDTO = {
 interface IAlternativesRepositories {
   create(dto: AlternativeCreateDTO): Promise<Alternative>;
   findOne(dto: AlternativeFindOneDTO): Promise<Alternative>;
-  listAll(): Promise<Alternative[]>;
+  list(dto?: AlternativeListDTO): Promise<Alternative[]>;
   update(dto: AlternativeUpdateDTO): Promise<Alternative>;
   delete(dto: AlternativeDeleteDTO): Promise<void>;
 }
@@ -30,6 +34,7 @@ interface IAlternativesRepositories {
 export {
   IAlternativesRepositories,
   AlternativeCreateDTO,
+  AlternativeListDTO,
   AlternativeFindOneDTO,
   AlternativeUpdateDTO,
   AlternativeDeleteDTO,

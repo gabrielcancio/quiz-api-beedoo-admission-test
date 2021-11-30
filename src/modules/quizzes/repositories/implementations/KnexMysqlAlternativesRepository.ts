@@ -3,6 +3,7 @@ import { Alternative } from "../../models/Alternative";
 import {
   IAlternativesRepositories,
   AlternativeCreateDTO,
+  AlternativeListDTO,
   AlternativeFindOneDTO,
   AlternativeUpdateDTO,
   AlternativeDeleteDTO,
@@ -31,7 +32,15 @@ class KnexMysqlAlternativesRepository implements IAlternativesRepositories {
     return alternative;
   }
 
-  public async listAll() {
+  public async list({ questionId }: AlternativeListDTO = {}) {
+    if (questionId) {
+      const alternatives = await knex<Alternative>("alternatives")
+        .where({ question_id: questionId })
+        .select("*");
+
+      return alternatives;
+    }
+
     const alternatives = await knex<Alternative>("alternatives").select("*");
 
     return alternatives;

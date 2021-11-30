@@ -1,6 +1,7 @@
 import { Alternative } from "../../models/Alternative";
 import {
   AlternativeCreateDTO,
+  AlternativeListDTO,
   AlternativeFindOneDTO,
   AlternativeDeleteDTO,
   AlternativeUpdateDTO,
@@ -32,8 +33,14 @@ export class AlternativesRepositoryMock implements IAlternativesRepositories {
     return alternative;
   }
 
-  public async listAll() {
-    return this.alternatives;
+  public async list({ questionId }: AlternativeListDTO = {}) {
+    const isQuestionIdValid = !!questionId || questionId !== "";
+
+    return isQuestionIdValid
+      ? this.alternatives.filter(
+          (alternative) => alternative.question_id === questionId
+        )
+      : this.alternatives;
   }
 
   public async update({ content, id }: AlternativeUpdateDTO) {
