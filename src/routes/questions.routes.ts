@@ -2,6 +2,7 @@ import { Router } from "express";
 
 import { createQuestionController } from "../modules/quizzes/useCases/createQuestion";
 import { deleteQuestionController } from "../modules/quizzes/useCases/deleteQuestion";
+import { listAlternativesOfSpecificQuestionController } from "../modules/quizzes/useCases/listAlternativesOfSpecificQuestion";
 import { listQuestionController } from "../modules/quizzes/useCases/listQuestions";
 import { updateQuestionController } from "../modules/quizzes/useCases/updateQuestion";
 
@@ -21,6 +22,10 @@ questionsRoutes.patch("/:id", (request, response) => {
 
 questionsRoutes.delete("/:id", (request, response) => {
   return deleteQuestionController.handle(request, response);
+});
+
+questionsRoutes.get("/:id/alternatives", (request, response) => {
+  return listAlternativesOfSpecificQuestionController.handle(request, response);
 });
 
 export { questionsRoutes };
