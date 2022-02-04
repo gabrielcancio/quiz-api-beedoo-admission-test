@@ -2,10 +2,8 @@ FROM node
 
 USER node
 
-RUN npm install
+WORKDIR /usr/app
 
 COPY . .
 
 EXPOSE 3000
-
-CMD ["npm", "run", "dev"]
