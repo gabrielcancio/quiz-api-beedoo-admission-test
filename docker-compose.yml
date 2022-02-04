@@ -18,6 +18,7 @@ services:
       - mysqldata:/var/lib/mysql
 
   app:
+    entrypoint: ./.docker/api/api-init-entrypoint.sh
     build: .
     container_name: api-beedoo
     ports:
