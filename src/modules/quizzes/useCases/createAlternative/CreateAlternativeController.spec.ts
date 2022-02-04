@@ -1,6 +1,6 @@
 import request from "supertest"; // eslint-disable-line
-import { app } from "../../../../app";
 import { knex } from "../../../../database";
+import { app } from "../../../../http/app";
 import { Question } from "../../models/Question";
 import { KnexMysqlQuestionsRepository } from "../../repositories/implementations/KnexMysqlQuestionsRepository";
 

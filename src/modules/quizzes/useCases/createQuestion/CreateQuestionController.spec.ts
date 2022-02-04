@@ -1,6 +1,6 @@
 import request from "supertest"; // eslint-disable-line
-import { app } from "../../../../app";
 import { knex } from "../../../../database";
+import { app } from "../../../../http/app";
 
 describe("Create Question Controller", () => {
   beforeAll(async () => {
