@@ -14,8 +14,8 @@ services:
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
     volumes:
-      - ./.docker:/docker-entrypoint-initdb.d
-      - mysqldata:/var/lib/mysql
+      - ./.docker/mysql/init-test-database-entrypoint:/docker-entrypoint-initdb.d
+      - ./.docker/mysql/mysqldata:/var/lib/mysql
 
   app:
     entrypoint: ./.docker/api/api-init-entrypoint.sh
@@ -30,7 +30,3 @@ services:
       - database
     depends_on:
       - database
-
-volumes:
-  mysqldata:
-    driver: local
