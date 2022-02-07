@@ -29,6 +29,9 @@ $ docker-compose up -d
 ```bash
 $ docker-compose logs app
 ```
+3. If you have any problem run the following command:
+```bash
+$ docker-compose restart app
 *Obs: (You need the [docker](https://www.docker.com/) and the [docker-compose](https://docs.docker.com/compose/) already have been installed).*
 
 ---
