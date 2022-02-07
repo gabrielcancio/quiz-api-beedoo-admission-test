@@ -10,7 +10,7 @@ class DeleteQuestionController {
 
     await this.deleteQuestionUseCase.execute({ id });
 
-    return response.status(203).send();
+    return response.status(204).send();
   }
 }
 

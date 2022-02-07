@@ -21,7 +21,7 @@ describe("Delete Question Controller", () => {
       content: "Is Beedoo Awesome?",
     });
 
-    await request(app).delete(`/questions/${id}`).expect(203);
+    await request(app).delete(`/questions/${id}`).expect(204);
     const questions = await knexMysqlQuestionsRepository.listAll();
 
     expect(questions.length).toBe(0);
