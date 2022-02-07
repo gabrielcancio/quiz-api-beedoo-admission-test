@@ -28,7 +28,7 @@ describe("Delete Alternative Controller", () => {
       questionId: questionId as string,
     });
 
-    await request(app).delete(`/alternatives/${id}`).expect(203);
+    await request(app).delete(`/alternatives/${id}`).expect(204);
     const questions = await knexMysqlAlternativesRepository.list();
 
     expect(questions.length).toBe(0);
