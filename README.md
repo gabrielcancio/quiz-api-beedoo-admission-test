@@ -39,8 +39,6 @@ $ docker-compose restart app
 
 ## ⚙️ Functional Requirements and Business Rules
 <br>
-- Listar todas as PERGUNTAS com suas respectivas opções de RESPOSTA.
-
 - It should be able to create a new question.
     - It should not be able to create a question with invalid content(Empty).
 - It should be able to list all questions
