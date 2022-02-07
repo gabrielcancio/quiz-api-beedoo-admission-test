@@ -2,10 +2,10 @@
   "name": "teste-desenvolvedor-pleno",
   "version": "1.0.0",
   "description": "Construímos uma plataforma para tornar a comunicação e a capacitação de equipes de atendimento mais ágil, produtiva e eficiente. Acreditamos que quando você combina um propósito poderoso com grandes pessoas que são as melhores no que fazem, você obtém uma cultura diferente de qualquer outra. Para um novo mundo de trabalho, o Beedoo oferece uma nova maneira de aprender com conceitos de Social e Micro Learning, Gamification , Gestão analítica, base de conhecimento cognitiva e inteligência artificial.",
-  "main": "src/server.js",
+  "main": "src/http/server.js",
   "scripts": {
-    "start": "tsc && node dist/server.js",
-    "dev": "npx ts-node-dev src/server.ts",
+    "start": "tsc && node dist/src/http/server.js",
+    "dev": "npx ts-node-dev src/http/server.ts",
     "knex:migrate:latest": "docker exec -it api-beedoo npx knex migrate:latest",
     "docker:cmd:run:migrations": "npx knex migrate:latest",
     "test": "NODE_ENV=testing jest -i"
