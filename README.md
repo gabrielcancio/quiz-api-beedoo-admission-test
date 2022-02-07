@@ -1,52 +1,62 @@
-## Sobre o Beedoo
+## :computer: Project
+This project was developed for a selective process of a Job at Beedoo. Basically, this project is an api developed in Node.js to register questions and alternatives(quizz). 
 
-Construímos uma plataforma para tornar a comunicação e a capacitação de equipes de atendimento mais ágil, produtiva e eficiente. Acreditamos que quando você combina um propósito poderoso com grandes pessoas que são as melhores no que fazem, você obtém uma cultura diferente de qualquer outra. Para um novo mundo de trabalho, o Beedoo oferece uma nova maneira de aprender com conceitos de Social e Micro Learning, Gamification , Gestão analítica, base de conhecimento cognitiva e inteligência artificial.
+---
 
-## Sobre um Abeedoozido
+## :rocket: Stack
+### **Main:**
+- [TypeScript](https://www.typescriptlang.org/)
+- [Node.js](https://nodejs.org/en/)
+- [ExpressJS](https://expressjs.com/)
+- [Knex.js](https://knexjs.org/)
+- [Jest](https://jestjs.io/)
+- [Supertest](https://www.npmjs.com/package/supertest)
+- [ESLint](https://eslint.org/)
+- [Docker](https://www.docker.com/)
+- [MySQL](https://www.mysql.com/)
 
-Espera-se que como parte de nosso time, você siga as melhores práticas de tecnologia, 
-tais como documentação, organização e versionamento de código e análises.
-Estamos à procura de alguém motivado para ter suas idéias e criações nas mãos dos usuários, que compartilhe nossa empolgação para evoluir positivamente o propósito do Beedoo.
+### **Software development process**
+- Test-driven development
 
-## Responsabilidade da função
-Você atuará na criação de novas features e manutenção do sistema,
-além de elaborar e manter consultas grandes e complexas para geração de relatórios,
-criar serviços e integrações com APIs, lidar com diferentes padrões de arquitetura para organização de código em linguagens de script e funcional.
-Também vai ajudar na construção do projeto, de fazer bom planejamento do projeto e delegar responsabilidades e conhecimentos para outros membros do time.
+---
 
-## Local
+## :zap: Running
+1. You can run the application running the follow command:
+```bash
+$ docker-compose up -d
+```
+2. You can view the application logs with the following command:
+```bash
+$ docker-compose logs app
+```
+*Obs: (You need the [docker](https://www.docker.com/) and the [docker-compose](https://docs.docker.com/compose/) already have been installed).*
 
-Possuimos duas naves onde você pode estar quando quiser. Uma Nave fica localizada na **zona norte de São Paulo**, e outra na cidade de **São José dos Campos**, interior do estado de São Paulo. Porém não se preocupe, nosso time de desenvolvimento atua **100% remotamente**, e **você** pode estar **em qualquer lugar do Brasil**, até mesmo em **outros países**, ou na **beira da praia**.
+---
 
-## Contratação e Benefícios
+## ⚙️ Functional Requirements and Business Rules
+<br>
+- Listar todas as PERGUNTAS com suas respectivas opções de RESPOSTA.
 
-- Contratação PJ
-- Cartão de benefícios flexíveis.
-- 30 dias de recesso remunerado.
-- Feriados remurenados.
-- Licença maternidade/paternidade extendida.
-- Ciclo de reconhecimento e desenvolvimento.
+- It should be able to create a new question.
+    - It should not be able to create a question with invalid content(Empty).
+- It should be able to list all questions
+- It should be able to update the content property of an existing question.
+    - It should not be able to update the content of a non-existent question.
+    - It should not be able to update an invalid content(Empty).
+- It should be able to delete an question.
+    - It should not be able to delete a non-existent question.
+---
+- It should be able to create a new alternative.
+    - It should not be able to create a alternative to a non-existent question.
+    - It should not be able to create a alternative with a invalid content.
+    - It should not be able to create a alternative with a content already was used.
+- It should be able to list alternatives of a specific question.
+    - It should not be able to list question of a non-existing question.
+- It should be able to update the content property of an existing alternative.
+    - It should not be able to update the content of a non-existent alternative.
+    - It should not be able to update an invalid content(Empty).
+- It should be able to delete an alternative.
+    - It should not be able to delete a non-existent alternative.
 
-## Diferênciais
-
-- Cultura de feedback
-- Equipe 100% unida, a gente ta junto na mesma nave.
-- O CTO as vezes paga o lanche da sexta feira.
-- Emendas em feriados nacionais.
-
-## Requisitos
-- Autogestão
-- GIT
-- NodeJS
-- Testes Funcionais automatizados
-- MySQL
-- Modelagem de dados relacionais
-- Rest APIs
-- Scrum/Kanban
-- Code Review
-
-
-## Como se candidatar
-
-Para se candidatar, basta acessar a url e realizar o teste para a vaga:
-[https://github.com/beedootestes/teste-desenvolvedor-pleno](teste.md)
+---
+Developed with :green_heart: by Gabriel Cancio!
